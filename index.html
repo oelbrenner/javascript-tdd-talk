@@ -76,21 +76,21 @@
         <section>
           <h2>Example Test</h2>
           <pre><code class="javascript">
-            var thingReturnsTrue = function() {
-              return true;
-            };
+  var thingReturnsTrue = function() {
+    return true;
+  };
 
-            // Jasmine
-            describe('Thing returns true', function() {
-              it('is true', function() {
-                expect( thingReturnsTrue() ).toBe(true);
-              });
-            });
+  // Jasmine
+  describe('Thing returns true', function() {
+    it('is true', function() {
+      expect( thingReturnsTrue() ).toBe(true);
+    });
+  });
 
-            // QUnit
-            test('Thing returns true is true', function() {
-              equal(thingReturnsTrue(), true, 'It should equal true.');
-            });
+  // QUnit
+  test('Thing returns true is true', function() {
+    equal(thingReturnsTrue(), true, 'It should equal true.');
+  });
           </code></pre>
         </section>
 
@@ -226,6 +226,20 @@ function Car() {
 
 
 
+            <section>
+              <h3 class="orange">Refactor</h3>
+              <p>Nothing to refactor here. Looks pretty good so far.</p>
+              <pre><code class="javascript" data-trim>
+function Car() {
+  Car.prototype.needsCarWashed = function() {
+    return false;
+  };
+}
+
+              </code></pre>
+            </section>
+
+
           <section>
           <h3 class="red">Failing Test</h3>
           <pre><code class="javascript" data-trim>
@@ -284,6 +298,7 @@ function Car() {
             </section>
 
             <section>
+              <h3 class="green">Tests Should Still Pass</h3>
               <iframe src="tests/2_pass.html"></iframe>
             </section>
 
@@ -355,6 +370,7 @@ function Car() {
             </section>
 
             <section>
+              <h3 class="green">Tests Should Still Pass</h3>
               <iframe src="tests/3_pass.html"></iframe>
             </section>
 
