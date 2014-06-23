@@ -104,11 +104,66 @@
         <section>
           <h2>Code Confidence</h2>
           <ul>
-            <li>You should be able to deploy your master branch/trunk at any time.</li>
+            <li>You as the rockstar/ninja/devops/unicorn should be able to deploy your master branch/trunk at any time.</li>
             <li>A well designed test suite with a high degree of coverage eliminates, or at least strongly mitigates the fear of change.</li>
-            <li></li>
           </ul>
         </section>
+
+        <section>
+          <h2>Cleaner Code</h2>
+          <ul>
+            <li>Software development is a never ending process. Best practices change, patterns change, business requirements change. Tests allow you to adapt to this.</li>
+            <li>Clean code allows you to change or refactor your code at any given time without changing the interfaces to your objects.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Fewer Bugs</h2>
+          <blockquote>
+            “What the research team found was that the TDD teams produced code that was 60 to 90 percent better in terms of defect density than non-TDD teams. They also discovered that TDD teams took longer to complete their projects—15 to 35 percent longer.”
+          </blockquote>
+          <small>Source: <a>http://research.microsoft.com/en-us/news/features/nagappan-100609.aspx</a></small>
+        </section>
+
+        <section>
+          <h2>It's Slower?</h2>
+          <p>There will be an initial slow down in code pushes but it eventually evens out. I'm also of the opinion that slower is definitely better and 60-90% reduction in bugs is pretty significant.</p>
+        </section>
+
+        <section>
+          <h2>Have I convinced you yet?<br><br>Ok, lets get started.</h2>
+        </section>
+
+        <section>
+          <h2>The Rules of TDD by Uncle Bob Martin</h2>
+          <ul>
+            <li>You may not write any production code without a failing test.</li>
+            <li>You may not write more of a test than is sufficient to fail.</li>
+            <li>You may not write more production code than is sufficient to pass.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>The TDD Cycle</h2>
+          <img src="/assets/red-green-refactor.jpg">
+        </section>
+
+        <section>
+          <p>
+            <strong style="color: red">RED</strong><br>Write a failing test.
+          </p>
+
+          <br>
+          <p>
+            <strong style="color: green">GREEN</strong><br>Write the minimal amount of code required to make the test pass.
+          </p>
+
+          <br>
+          <p>
+            <strong style="color: black">REFACTOR</strong><br>Clean up any duplication and make any code clarity changes while ensuring that the test still passes.
+          </p>
+        </section>
+
       </div>
 		</div>
 
