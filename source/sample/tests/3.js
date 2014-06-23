@@ -11,5 +11,5 @@ test('new cars have a default age', function() {
 test('cars over the age of 15 need a car wash', function() {
   var car = new Car();
   car.age = 15;
-  equal(car.needsCarWashed(), true, 'it needs a car was at 15 days old');
+  equal(car.needsCarWashed(), true, 'it needs a car wash at 15 days old');
 });
