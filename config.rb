@@ -18,8 +18,16 @@ helpers do
     load_file('code', index)
   end
 
+  def load_refactor(index)
+    load_file('refactor', index) rescue ""
+  end
+
   def load_file(dir, index)
     File.read File.join(root, 'source', 'sample', dir, "#{index}.js")
+  end
+
+  def has_refactor_file?(index)
+    load_refactor(index).length > 0
   end
 end
 

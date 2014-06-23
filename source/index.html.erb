@@ -31,6 +31,10 @@
         width: 100%;
         height: 400px !important;
       }
+
+      .red { color: red !important; }
+      .green { color: #00FF00 !important; }
+      .orange { color: orange !important; }
     </style>
 	</head>
 
@@ -152,13 +156,13 @@
 
         <section>
           <p>
-            <strong style="color: red">RED</strong><br>Write a failing test.
+            <strong class="red">RED</strong><br>Write a failing test.
           </p><br>
           <p>
-            <strong style="color: green">GREEN</strong><br>Write the minimal amount of code required to make the test pass.
+            <strong class="green">GREEN</strong><br>Write the minimal amount of code required to make the test pass.
           </p><br>
           <p>
-            <strong style="color: black">REFACTOR</strong><br>Clean up any duplication and make any code clarity changes while ensuring that the test still passes.
+            <strong class="orange">REFACTOR</strong><br>Clean up any duplication and make any code clarity changes while ensuring that the test still passes.
           </p>
         </section>
 
@@ -189,26 +193,45 @@
 
 
         <% sample_range.each do |index| %>
-        <section>
-        <pre><code class="javascript" data-trim>
-<%= load_test(index) %>
-        </code></pre>
-        </section>
-
-
-        <section>
-          <iframe src="/tests/<%= index %>_fail.html"></iframe>
-        </section>
-
-        <section>
+          <section>
+          <h3 class="red">Failing Test</h3>
           <pre><code class="javascript" data-trim>
-<%= load_code(index, 'pass') %>
+<%= load_test(index) %>
           </code></pre>
-        </section>
+          </section>
 
-        <section>
-          <iframe src="/tests/<%= index %>_pass.html"></iframe>
-        </section>
+
+          <section>
+            <iframe src="/tests/<%= index %>_fail.html"></iframe>
+          </section>
+
+          <section>
+            <h3 class="green">Make The Test Pass</h3>
+            <pre><code class="javascript" data-trim>
+<%= load_code(index, 'pass') %>
+            </code></pre>
+          </section>
+
+          <section>
+            <iframe src="/tests/<%= index %>_pass.html"></iframe>
+          </section>
+
+
+          <% if has_refactor_file?(index) %>
+
+          <section>
+            <h3 class="orange">Refactor</h3>
+            <pre><code class="javascript" data-trim>
+<%= load_refactor(index) %>
+            </code></pre>
+          </section>
+
+          <section>
+            <iframe src="/tests/<%= index %>_pass.html"></iframe>
+          </section>
+
+          <% end %>
+
         <% end %>
 
 
