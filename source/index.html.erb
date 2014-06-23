@@ -151,7 +151,7 @@
         </section>
 
         <section>
-          <img src="/assets/red-green-refactor.jpg">
+          <%= image_tag 'red-green-refactor.jpg' %>
         </section>
 
         <section>
@@ -202,7 +202,7 @@
 
 
           <section>
-            <iframe src="/tests/<%= index %>_fail.html"></iframe>
+            <iframe src="<%= url_for "tests/#{index}_fail.html" %>"></iframe>
           </section>
 
           <section>
@@ -213,22 +213,22 @@
           </section>
 
           <section>
-            <iframe src="/tests/<%= index %>_pass.html"></iframe>
+            <iframe src="<%= url_for "tests/#{index}_pass.html" %>"></iframe>
           </section>
 
 
           <% if has_refactor_file?(index) %>
 
-          <section>
-            <h3 class="orange">Refactor</h3>
-            <pre><code class="javascript" data-trim>
+            <section>
+              <h3 class="orange">Refactor</h3>
+              <pre><code class="javascript" data-trim>
 <%= load_refactor(index) %>
-            </code></pre>
-          </section>
+              </code></pre>
+            </section>
 
-          <section>
-            <iframe src="/tests/<%= index %>_pass.html"></iframe>
-          </section>
+            <section>
+              <iframe src="<%= url_for "tests/#{index}_pass.html" %>"></iframe>
+            </section>
 
           <% end %>
 

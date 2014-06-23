@@ -34,3 +34,9 @@ end
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
+
+configure :build do
+  ignore 'sample/test.html'
+  activate :relative_assets
+  set :relative_links, true
+end
