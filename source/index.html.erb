@@ -20,15 +20,18 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-      /* global Reveal, document, winodow, hljs */
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
-
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+
+    <style type="text/css">
+      .reveal iframe {
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        height: 400px !important;
+      }
+    </style>
 	</head>
 
 	<body>
@@ -49,7 +52,7 @@
 					<h3>Hello! I'm Tyler Johnston</h3>
           <ul>
             <li>Co-owner of Ahoy Consulting</li>
-            <li>Ruby/Javascript/PHP/iOS/Whatever</li>
+            <li>Ruby / Javascript / PHP (pls no) / iOS / etc</li>
             <li>Lover</li>
             <li>You can find me on the Twitters: <a href="http://twitter.com/tylerhohnst">@tylerjohnst</a></li>
           </ul>
@@ -136,33 +139,81 @@
 
         <section>
           <h2>The Rules of TDD by Uncle Bob Martin</h2>
-          <ul>
+          <ol>
             <li>You may not write any production code without a failing test.</li>
             <li>You may not write more of a test than is sufficient to fail.</li>
             <li>You may not write more production code than is sufficient to pass.</li>
-          </ul>
+          </ol>
         </section>
 
         <section>
-          <h2>The TDD Cycle</h2>
           <img src="/assets/red-green-refactor.jpg">
         </section>
 
         <section>
           <p>
             <strong style="color: red">RED</strong><br>Write a failing test.
-          </p>
-
-          <br>
+          </p><br>
           <p>
             <strong style="color: green">GREEN</strong><br>Write the minimal amount of code required to make the test pass.
-          </p>
-
-          <br>
+          </p><br>
           <p>
             <strong style="color: black">REFACTOR</strong><br>Clean up any duplication and make any code clarity changes while ensuring that the test still passes.
           </p>
         </section>
+
+        <section>
+          <p>Tests give you live feedback of your code.</p>
+          <ul>
+            <li>Is the code hard to test?</li>
+            <li>Are the tests breaking frequently?</li>
+            <li>This code is completely untestable!</li>
+          </ul>
+        </section>
+
+        <section>
+          <p>There are a multitude of test frameworks. They all have similar goals which aim to make testing easier.</p>
+          <br>
+          <ul>
+            <li>Jasmine</li>
+            <li>Mocha</li>
+            <li>Qunit</li>
+            <li>Any of the multiple Javascript test frameworks that have been released during this talk.</li>
+          </ul>
+        </section>
+
+
+        <section>
+          <p>Enough theory, lets get on to a sample!</p>
+        </section>
+
+
+        <% (1..1).each do |index| %>
+        <section>
+        <pre><code class="javascript" data-trim>
+<%= load_test(index) %>
+        </code></pre>
+        </section>
+
+
+        <section>
+          <iframe src="/tests/<%= index %>_fail.html"></iframe>
+        </section>
+
+        <section>
+          <pre><code class="javascript" data-trim>
+<%= load_code(index) %>
+          </code></pre>
+        </section>
+
+        <section>
+          <iframe src="/tests/<%= index %>_pass.html"></iframe>
+        </section>
+        <% end %>
+
+
+
+
 
       </div>
 		</div>
@@ -171,6 +222,7 @@
 		<script src="js/reveal.min.js"></script>
 
 		<script>
+      /* global Reveal, document, winodow, hljs */
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
