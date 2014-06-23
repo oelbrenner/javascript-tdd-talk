@@ -151,7 +151,7 @@
         </section>
 
         <section>
-          <img src="/assets/red-green-refactor.jpg">
+          <img src="images/red-green-refactor.jpg" />
         </section>
 
         <section>
@@ -205,7 +205,7 @@ test('new cars do not need a car wash', function() {
 
 
           <section>
-            <iframe src="/tests/1_fail.html"></iframe>
+            <iframe src="tests/1_fail.html"></iframe>
           </section>
 
           <section>
@@ -221,7 +221,7 @@ function Car() {
           </section>
 
           <section>
-            <iframe src="/tests/1_pass.html"></iframe>
+            <iframe src="tests/1_pass.html"></iframe>
           </section>
 
 
@@ -244,7 +244,7 @@ test('new cars have a default age', function() {
 
 
           <section>
-            <iframe src="/tests/2_fail.html"></iframe>
+            <iframe src="tests/2_fail.html"></iframe>
           </section>
 
           <section>
@@ -262,14 +262,14 @@ function Car() {
           </section>
 
           <section>
-            <iframe src="/tests/2_pass.html"></iframe>
+            <iframe src="tests/2_pass.html"></iframe>
           </section>
 
 
 
-          <section>
-            <h3 class="orange">Refactor</h3>
-            <pre><code class="javascript" data-trim>
+            <section>
+              <h3 class="orange">Refactor</h3>
+              <pre><code class="javascript" data-trim>
 function Car() {
   var STARTING_AGE = 0;
 
@@ -280,12 +280,12 @@ function Car() {
   Car.prototype.age = STARTING_AGE;
 }
 
-            </code></pre>
-          </section>
+              </code></pre>
+            </section>
 
-          <section>
-            <iframe src="/tests/2_pass.html"></iframe>
-          </section>
+            <section>
+              <iframe src="tests/2_pass.html"></iframe>
+            </section>
 
 
           <section>
@@ -312,7 +312,7 @@ test('cars over the age of 15 need a car wash', function() {
 
 
           <section>
-            <iframe src="/tests/3_fail.html"></iframe>
+            <iframe src="tests/3_fail.html"></iframe>
           </section>
 
           <section>
@@ -332,14 +332,14 @@ function Car() {
           </section>
 
           <section>
-            <iframe src="/tests/3_pass.html"></iframe>
+            <iframe src="tests/3_pass.html"></iframe>
           </section>
 
 
 
-          <section>
-            <h3 class="orange">Refactor</h3>
-            <pre><code class="javascript" data-trim>
+            <section>
+              <h3 class="orange">Refactor</h3>
+              <pre><code class="javascript" data-trim>
 function Car() {
   var STARTING_AGE = 0;
   var WASHING_AGE  = 15;
@@ -351,12 +351,12 @@ function Car() {
   Car.prototype.age = STARTING_AGE;
 }
 
-            </code></pre>
-          </section>
+              </code></pre>
+            </section>
 
-          <section>
-            <iframe src="/tests/3_pass.html"></iframe>
-          </section>
+            <section>
+              <iframe src="tests/3_pass.html"></iframe>
+            </section>
 
 
 
