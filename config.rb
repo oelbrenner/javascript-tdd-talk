@@ -8,11 +8,6 @@ helpers do
     (1..3)
   end
 
-  def code_for_failing_test(index)
-    return "" if index == 1
-    load_code(index - 1)
-  end
-
   def load_test(index)
     load_file('tests', index)
   end
