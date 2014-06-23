@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QUnit Example</title>
+  <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.14.0.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="//code.jquery.com/qunit/qunit-1.14.0.js"></script>
+
+  <script type="text/javascript">
+    /* jshint ignore:start */
+    function Car() {
+  var STARTING_AGE = 0;
+
+  Car.prototype.needsCarWashed = function() {
+    return this.age >= 15;
+  };
+
+  Car.prototype.age = STARTING_AGE;
+}
+
+    test('new cars do not need a car wash', function() {
+  var car = new Car();
+  equal(car.needsCarWashed(), false, 'it does not need a car wash');
+});
+
+test('new cars have a default age', function() {
+  var car = new Car();
+  equal(car.age, 0, 'the car is 0 days old by default');
+});
+
+test('cars over the age of 15 need a car wash', function() {
+  var car = new Car();
+  car.age = 15;
+  equal(car.needsCarWashed(), true, 'it needs a car was at 15 days old');
+});
+
+  </script>
+
+  <style type="text/css">
+    #qunit-testrunner-toolbar, #qunit-userAgent, #qunit-testresult {
+      display: none;
+    }
+  </style>
+</body>
+</html>

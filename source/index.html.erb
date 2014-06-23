@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+    <style type="text/css">
+      .reveal iframe {
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        height: 400px !important;
+      }
+
+      .red { color: red !important; }
+      .green { color: #00FF00 !important; }
+      .orange { color: orange !important; }
+    </style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Test Driven Development</h1>
+          <h3>with Javascript</h3>
+					<p>
+						<small>Created by Tyler Johnston&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;<a href="http://twitter.com/tylerjohnst">@tylerjohnst</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h3>Hello! I'm Tyler Johnston</h3>
+          <ul>
+            <li>Co-owner of Ahoy Consulting</li>
+            <li>Ruby / Javascript / PHP (pls no) / iOS / etc</li>
+            <li>Lover</li>
+            <li>You can find me on the Twitters: <a href="http://twitter.com/tylerhohnst">@tylerjohnst</a></li>
+          </ul>
+				</section>
+
+        <section>
+          <h2>What is Test Driven Development?</h2>
+          <p>Test Driven Development (or TDD) is the practice of software development guided by tests.</p>
+        </section>
+
+        <section>
+          <h2>What is a test?</h2>
+          <!-- TODO: Fix this? -->
+          <p>Code written to exercise existing code and ensure it performs the expected behavior.</p>
+        </section>
+
+        <section>
+          <h2>Example Test</h2>
+          <pre><code class="javascript">
+            var thingReturnsTrue = function() {
+              return true;
+            };
+
+            // Jasmine
+            describe('Thing returns true', function() {
+              it('is true', function() {
+                expect( thingReturnsTrue() ).toBe(true);
+              });
+            });
+
+            // QUnit
+            test('Thing returns true is true', function() {
+              equal(thingReturnsTrue(), true, 'It should equal true.');
+            });
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Story Time</h1>
+        </section>
+
+        <section>
+          <h2>Why Use Test Driven Development?</h2>
+          <ul>
+            <li>Ensures coverage of any code written</li>
+            <li>Enables code confidence</li>
+            <li>Encourage cleaner code and architecture</li>
+            <li>Projects yield fewer bugs as they grow in complexity</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Code Confidence</h2>
+          <ul>
+            <li>You as the rockstar/ninja/devops/unicorn should be able to deploy your master branch/trunk at any time.</li>
+            <li>A well designed test suite with a high degree of coverage eliminates, or at least strongly mitigates the fear of change.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Cleaner Code</h2>
+          <ul>
+            <li>Software development is a never ending process. Best practices change, patterns change, business requirements change. Tests allow you to adapt to this.</li>
+            <li>Clean code allows you to change or refactor your code at any given time without changing the interfaces to your objects.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Fewer Bugs</h2>
+          <blockquote>
+            “What the research team found was that the TDD teams produced code that was 60 to 90 percent better in terms of defect density than non-TDD teams. They also discovered that TDD teams took longer to complete their projects—15 to 35 percent longer.”
+          </blockquote>
+          <small>Source: <a>http://research.microsoft.com/en-us/news/features/nagappan-100609.aspx</a></small>
+        </section>
+
+        <section>
+          <h2>It's Slower?</h2>
+          <p>There will be an initial slow down in code pushes but it eventually evens out. I'm also of the opinion that slower is definitely better and 60-90% reduction in bugs is pretty significant.</p>
+        </section>
+
+        <section>
+          <h2>Have I convinced you yet?<br><br>Ok, lets get started.</h2>
+        </section>
+
+        <section>
+          <h2>The Rules of TDD by Uncle Bob Martin</h2>
+          <ol>
+            <li>You may not write any production code without a failing test.</li>
+            <li>You may not write more of a test than is sufficient to fail.</li>
+            <li>You may not write more production code than is sufficient to pass.</li>
+          </ol>
+        </section>
+
+        <section>
+          <%= image_tag 'red-green-refactor.jpg' %>
+        </section>
+
+        <section>
+          <p>
+            <strong class="red">RED</strong><br>Write a failing test.
+          </p><br>
+          <p>
+            <strong class="green">GREEN</strong><br>Write the minimal amount of code required to make the test pass.
+          </p><br>
+          <p>
+            <strong class="orange">REFACTOR</strong><br>Clean up any duplication and make any code clarity changes while ensuring that the test still passes.
+          </p>
+        </section>
+
+        <section>
+          <p>Tests give you live feedback of your code.</p>
+          <ul>
+            <li>Is the code hard to test?</li>
+            <li>Are the tests breaking frequently?</li>
+            <li>This code is completely untestable!</li>
+          </ul>
+        </section>
+
+        <section>
+          <p>There are a multitude of test frameworks. They all have similar goals which aim to make testing easier.</p>
+          <br>
+          <ul>
+            <li>Jasmine</li>
+            <li>Mocha</li>
+            <li>Qunit</li>
+            <li>Any of the multiple Javascript test frameworks that have been released during this talk.</li>
+          </ul>
+        </section>
+
+
+        <section>
+          <p>Enough theory, lets get on to a sample!</p>
+        </section>
+
+
+        <% sample_range.each do |index| %>
+          <section>
+          <h3 class="red">Failing Test</h3>
+          <pre><code class="javascript" data-trim>
+<%= load_test(index) %>
+          </code></pre>
+          </section>
+
+
+          <section>
+            <iframe src="<%= url_for "tests/#{index}_fail.html" %>"></iframe>
+          </section>
+
+          <section>
+            <h3 class="green">Make The Test Pass</h3>
+            <pre><code class="javascript" data-trim>
+<%= load_code(index, 'pass') %>
+            </code></pre>
+          </section>
+
+          <section>
+            <iframe src="<%= url_for "tests/#{index}_pass.html" %>"></iframe>
+          </section>
+
+
+          <% if has_refactor_file?(index) %>
+
+            <section>
+              <h3 class="orange">Refactor</h3>
+              <pre><code class="javascript" data-trim>
+<%= load_refactor(index) %>
+              </code></pre>
+            </section>
+
+            <section>
+              <iframe src="<%= url_for "tests/#{index}_pass.html" %>"></iframe>
+            </section>
+
+          <% end %>
+
+        <% end %>
+
+
+
+
+
+      </div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+      /* global Reveal, document, winodow, hljs */
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        backgroundTransition: 'slide',
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
