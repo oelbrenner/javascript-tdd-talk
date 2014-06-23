@@ -10,17 +10,16 @@
   <div id="qunit-fixture"></div>
   <script src="//code.jquery.com/qunit/qunit-1.14.0.js"></script>
 
-  <% if status == :fail %>
-    <script type="text/javascript">
-      /* jshint ignore:start */
-      <%= code_for_failing_test(index) %>
-      <%= load_test(index) %>
-    </script>
-  <% else %>
-    <script type="text/javascript">
-      <%= load_code(index) %>
-      <%= load_test(index) %>
-    </script>
-  <% end %>
+  <script type="text/javascript">
+    /* jshint ignore:start */
+    <%= load_code(index, status) %>
+    <%= load_test(index) %>
+  </script>
+
+  <style type="text/css">
+    #qunit-testrunner-toolbar, #qunit-userAgent, #qunit-testresult {
+      display: none;
+    }
+  </style>
 </body>
 </html>

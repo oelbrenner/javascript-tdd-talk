@@ -188,7 +188,7 @@
         </section>
 
 
-        <% (1..1).each do |index| %>
+        <% sample_range.each do |index| %>
         <section>
         <pre><code class="javascript" data-trim>
 <%= load_test(index) %>
@@ -202,7 +202,7 @@
 
         <section>
           <pre><code class="javascript" data-trim>
-<%= load_code(index) %>
+<%= load_code(index, 'pass') %>
           </code></pre>
         </section>
 

@@ -1,4 +1,1 @@
-coffeescript-talk
-=================
-
-My talk for the Suncoast.js meetup
+My talk for the Suncoast.js meetup on Test Driven Development
